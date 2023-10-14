@@ -1,17 +1,18 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:validators/validators.dart';
 
 import '../view/home.dart';
 
-class MainPage extends StatefulWidget {
-  const MainPage({Key? key}) : super(key: key);
+class FinalView extends StatefulWidget {
+  const FinalView({Key? key}) : super(key: key);
 
   @override
-  State<MainPage> createState() => _MainPageState();
+  State<FinalView> createState() => _FinalViewState();
 }
 
-class _MainPageState extends State<MainPage> {
+class _FinalViewState extends State<FinalView> {
   TextEditingController textEditingController = TextEditingController();
   bool isEmailCorrect = false;
 
@@ -22,27 +23,23 @@ class _MainPageState extends State<MainPage> {
   }
 
   dynamic snackBar = SnackBar(
+    backgroundColor: Colors.green,
     duration: const Duration(milliseconds: 1500),
-    content: const Text("Your Registration Complete"),
+    content: const Text("Congrats!😁 Your Registration Complete"),
     action: SnackBarAction(
       label: 'Got it',
+      textColor: Colors.white,
       onPressed: () {},
     ),
   );
 
-  /////////////////////////////////////
-  //@CodeWithFlexz on Instagram
-  //
-  //AmirBayat0 on Github
-  //Programming with Flexz on Youtube
-  /////////////////////////////////////
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return GestureDetector(
       onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
       child: Scaffold(
-          backgroundColor: Colors.grey[900],
+          backgroundColor: Colors.white,
           appBar: AppBar(
             backgroundColor:
                 isEmailCorrect == false ? Colors.redAccent : Colors.green,
@@ -57,13 +54,13 @@ class _MainPageState extends State<MainPage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text(
+                Text(
                   "Enter Your Email :",
                   textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 18,
-                    fontWeight: FontWeight.w300,
+                  style: GoogleFonts.ubuntu(
+                    color: Colors.black,
+                    fontSize: 20,
+                    fontWeight: FontWeight.w500,
                   ),
                 ),
                 const SizedBox(
@@ -72,9 +69,9 @@ class _MainPageState extends State<MainPage> {
                 Text(
                   isEmailCorrect == false ? "😴" : "😁",
                   textAlign: TextAlign.center,
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 18,
+                  style: GoogleFonts.ubuntu(
+                    color: Colors.black,
+                    fontSize: 25,
                     fontWeight: FontWeight.w300,
                   ),
                 ),
@@ -95,32 +92,50 @@ class _MainPageState extends State<MainPage> {
     );
   }
 
-  ElevatedButton buildLoginButton(BuildContext context) {
-    return ElevatedButton(
-      onPressed: isEmailCorrect == false
-          ? null
-          : () {
-              ScaffoldMessenger.of(context).showSnackBar(snackBar);
-              Future.delayed(const Duration(milliseconds: 1500)).then((value) {
-                Navigator.push(context,
-                    CupertinoPageRoute(builder: (context) => const HomePage()));
-              });
+  Widget buildLoginButton(BuildContext context) {
+    return SizedBox(
+      width: 120,
+      height: 45,
+      child: ElevatedButton(
+        onPressed: isEmailCorrect == false
+            ? null
+            : () {
+                ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                Future.delayed(const Duration(milliseconds: 1500))
+                    .then((value) {
+                  Navigator.push(
+                      context,
+                      CupertinoPageRoute(
+                          builder: (context) => const HomePage()));
+                });
 
-              textEditingController.clear();
-              isEmailCorrect = false;
-              setState(() {});
-            },
-      style: ButtonStyle(
-        backgroundColor: isEmailCorrect == false
-            ? MaterialStateProperty.all(const Color.fromARGB(255, 41, 41, 41))
-            : MaterialStateProperty.all(Colors.green),
+                textEditingController.clear();
+                isEmailCorrect = false;
+                setState(() {});
+              },
+        style: ButtonStyle(
+          shape: MaterialStatePropertyAll(
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(8))),
+          backgroundColor: isEmailCorrect == false
+              ? MaterialStateProperty.all(Color.fromARGB(255, 212, 212, 212))
+              : MaterialStateProperty.all(Colors.green),
+        ),
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 20),
+          child: Text(
+            "Login",
+            style: GoogleFonts.ubuntu(
+              color: Colors.white,
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
       ),
-      child: const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20), child: Text("Login")),
     );
   }
 
-  TextField textField() {
+  Widget textField() {
     return TextField(
       controller: textEditingController,
       onChanged: (val) {
@@ -128,18 +143,18 @@ class _MainPageState extends State<MainPage> {
           isEmailCorrect = isEmail(val);
         });
       },
-      style: const TextStyle(color: Colors.white),
+      style: GoogleFonts.ubuntu(color: Colors.black),
       showCursor: true,
-      cursorColor: Colors.white,
+      cursorColor: Colors.black,
       decoration: InputDecoration(
         labelText: "Email",
         hintText: "somthing@email.com",
-        hintStyle: const TextStyle(color: Colors.grey, fontSize: 15),
-        labelStyle: const TextStyle(
-            color: Colors.white, fontSize: 16, fontWeight: FontWeight.w300),
+        hintStyle: GoogleFonts.ubuntu(color: Colors.grey, fontSize: 15),
+        labelStyle: GoogleFonts.ubuntu(
+            color: Colors.black, fontSize: 16, fontWeight: FontWeight.w300),
         prefixIcon: const Icon(
           Icons.email_outlined,
-          color: Colors.white,
+          color: Colors.black,
         ),
         suffixIcon: isEmailCorrect == false
             ? const Icon(
@@ -151,10 +166,12 @@ class _MainPageState extends State<MainPage> {
                 color: Colors.green,
               ),
         enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.grey.shade200, width: 1),
-            borderRadius: BorderRadius.circular(10)),
-        floatingLabelStyle: const TextStyle(
-            color: Colors.white, fontSize: 18, fontWeight: FontWeight.w300),
+            borderSide: BorderSide(color: Colors.grey.shade700, width: 1),
+            borderRadius: BorderRadius.circular(15)),
+        floatingLabelStyle: GoogleFonts.ubuntu(
+            color: Colors.grey.shade900,
+            fontSize: 18,
+            fontWeight: FontWeight.w300),
         focusedBorder: OutlineInputBorder(
           borderSide: BorderSide(
               color: isEmailCorrect == false ? Colors.red : Colors.green,

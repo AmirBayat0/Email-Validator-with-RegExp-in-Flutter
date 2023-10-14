@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -6,7 +8,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[900],
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.green,
         centerTitle: true,
@@ -17,18 +19,21 @@ class HomePage extends StatelessWidget {
         width: double.infinity,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
+          children: [
             Icon(
-              Icons.home,
-              color: Colors.white,
-              size: 200,
+              CupertinoIcons.home,
+              color: Colors.black,
+              size: 150,
+            ),
+            SizedBox(
+              height: 10,
             ),
             Text(
-              "Home",
-              style: TextStyle(
-                  color: Colors.white,
+              "Welcome to Home Page Honey! 🌱",
+              style: GoogleFonts.ubuntu(
+                  color: Colors.black,
                   fontSize: 22,
-                  fontWeight: FontWeight.w300),
+                  fontWeight: FontWeight.w400),
             )
           ],
         ),

@@ -1,6 +1,19 @@
 import 'package:flutter/material.dart';
-
 import 'view/validate.dart';
+
+//
+// Created by CodeWithFlexZ
+// Tutorials on my YouTube
+//
+//! Instagram
+//! @CodeWithFlexZ
+//
+//? GitHub
+//? AmirBayat0
+//
+//* YouTube
+//* Programming with FlexZ
+//
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +27,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Email Validator ',
-      home: MainPage(),
+      home: FinalView(),
     );
   }
 }
