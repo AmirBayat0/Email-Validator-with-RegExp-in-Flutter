@@ -1,4 +1,4 @@
-# Email Validator with RegExp in Flutter
+# Email Validator App with RegExp in Flutter
 ## Preview
 ![Untitled](https://github.com/AmirBayat0/Email-Validator-with-RegExp-in-Flutter/assets/91388754/8a2f010f-df9c-4204-b79b-378c2302be59)
 ## Links
