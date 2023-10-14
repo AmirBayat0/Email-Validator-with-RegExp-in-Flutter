@@ -1,12 +1,13 @@
 # Email Validator with RegExp in Flutter
 ## Preview
-![git](https://user-images.githubusercontent.com/91388754/172040488-c4c16a0b-0c23-4e9e-850d-b5cc7b5b20b4.gif)
+![Untitled](https://github.com/AmirBayat0/Email-Validator-with-RegExp-in-Flutter/assets/91388754/8a2f010f-df9c-4204-b79b-378c2302be59)
 ## Links
-### Support Me
-<a href="https://www.buymeacoffee.com/AmirBayat"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" width="200" /></a>
-### Socials
-<p align="left"> 
-<a href="http://www.instagram.com/codewithflexz" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/instagram.svg" width="32" height="32" /></a>
-<a href="https://www.youtube.com/c/ProgrammingWithFlexZ" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/youtube.svg" width="32" height="32" /></a>
-<a href="https://znap.link/CodeWithFlexz" target="_blank" rel="noreferrer"><img src="https://uploads-ssl.webflow.com/6026bc921eff07d61a132750/602843b7b4409e5ea0cbcc1c_social-logo-2.png" width="32" height="32" /></a>
-</p>
+
+## This link allows you to support me
+* [SUPPORT](https://www.buymeacoffee.com/AmirBayat)
+
+## My Socials:
+* [INSTAGRAM](https://www.instagram.com/codewithflexz)
+* [YOUTUBE]( https://www.youtube.com/c/ProgrammingWithFlexZ)
+* [CONTACT ME](https://amirbayat.dev@gmail.com)
+* [FIND MORE](https://zaap.bio/CodeWithFlexz)
